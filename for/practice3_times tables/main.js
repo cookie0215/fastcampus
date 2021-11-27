@@ -6,19 +6,35 @@
 2 * 4 = 8
 */
 
-const input = document.querySelector("input") 
-const select = document.querySelector("select");
-const result = document.getElementById("result");
+const div = document.querySelector("div");
+const table = document.createElement("table");
+const btn = document.getElementById("btn");
+let enableClick = true;
 
+btn.addEventListener('click',e=>{
+    e.preventDefault();
 
-for(let j=2; j<10; j++){
-    // select안에 option태그 생성 및 2~9 단 넣기
-    const options = document.createElement("option");
-    options.innerHTML = j;
-    select.append(options);
-
-    for(let i=1; i<10; i++){
+    if(enableClick){
+        enableClick = false;
+        timesTables();
+    }
+})
     
-        // console.log(j*i);
+function timesTables(){
+    for(let j=2; j<10; j++){
+        let tr = document.createElement("tr");
+        let th = document.createElement("th");
+        th.innerText = `${j}단`
+        tr.append(th);
+
+        for(let i=1; i<10; i++){
+            let td = document.createElement("td");
+            td.innerText = `${j}*${i} = ${j*i}`;
+            
+            div.append(table);
+            table.append(tr);
+            tr.append(td);
+        }
     }
 }
+
