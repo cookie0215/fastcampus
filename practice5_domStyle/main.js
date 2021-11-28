@@ -19,3 +19,18 @@ function changeStyle(){
     // prompt에 입력한 속성과 값을 해당 div요소에 반영시킨다.
     div.style[newStyle.attribute] = newStyle.value;
 }
+
+
+// 체크박스 항목 중 체크되어 있는 항목 찾기
+const checked = document.querySelector("input[name=hobby]:checked");
+console.log(checked);
+
+// input창에 입력 시, keyup이벤트 발생
+const textInput = document.getElementById("textInput");
+const log = document.getElementById("log");
+
+textInput.addEventListener('keyup', e=>{
+    e.preventDefault();
+
+    log.innerHTML = textInput.value;
+})
