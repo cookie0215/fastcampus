@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <a class="logo" href="#">FastCampus Portfolio</a>
+        <nav>
+            <ul>
+                <li>
+                    <a href="#">사진올리기</a>
+                </li>
+                <li>
+                    <a href="#">내정보</a>
+                </li>
+                <li>
+                    <a href="#">팔로우보기</a>
+                </li>
+                <li>
+                    <a href="#">팔로워보기</a>
+                </li>
+            </ul>
+        </nav>
+        <a class="account" href="#">Logout</a>
+    </header>
+    <main>
+        <aside>
+            <div>사진 업로드</div>
+            <ol>
+                <li>1. 양식을 작성한다.</li>
+                <li>2. 사진 파일을 첨부한다.</li>
+                <li>3. 올리기 버튼을 누른다.</li>
+            </ol>
+        </aside>
+        <section>
+            <!-- 본문 첫번째 틀 -->
+            <article>
+                <h1>사진 올리기</h1>
+                <p>
+                    수많은 이용자들이 공유하는 멋진 <strong>사진</strong>들을 구경하고<br>
+                    내가 직접 찍은 작품들을 공유하세요!
+                </p>
+            </article>
+
+            <!-- 본문 두번째 틀 -->
+            <article>
+                <div class="title">사진 업로드 폼</div>
+                <div class="content">
+                    <div class="left">
+                        <form>
+                            <fieldset>
+                                <legend>저자정보</legend>
+                                <ul>
+                                    <li>
+                                        <label for="userName">이름</label>
+                                        <input id="userName" type="text" />
+                                    </li>
+                                    <li>
+                                        <input id="" type="radio" name="isPro" value="ordinary" />
+                                        <label for="">일반인</label>
+
+                                        <input id="" type="radio" name="isPro" value="professional" />
+                                        <label for="">전문가</label>
+                                    </li>
+                                </ul>
+                            </fieldset>
+                            
+                            <fieldset>
+                                <legend>사진정보</legend>
+                                <ul>
+                                    <li>
+                                        <label for="photoTit">제목</label>
+                                        <input id="photoTit" type="text" />
+                                    </li>
+                                    <li>
+                                        <label for="selTheme">주제</label>
+                                        <select id="selTheme">
+                                            <option value="nature">자연</option>
+                                            <option value="city">도시</option>
+                                            <option value="thing">사물</option>
+                                            <option value="people">사람</option>
+                                            <option value="animal">동물</option>
+                                        </select>
+                                    </li>
+                                    <li>
+                                        <label for="desc">설명</label>
+                                        <textarea id="desc" rows="12" placeholder="사진에 담은 생각 등을 자유롭게 적어주세요."></textarea>
+                                    </li>
+                                </ul>
+                            </fieldset>
+                            
+                            <fieldset>
+                                <legend>사진첨부</legend>
+                                <ul>
+                                    <li>
+                                        <label for="photoFile"></label>
+                                        <input id="photoFile" type="file"/>
+                                    </li>
+                                </ul>
+                            </fieldset>
+
+                            <div class="btnGroup">
+                                <button>올리기</button>
+                                <button type="button">취소</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="right">
+                        <h4>패스트캠퍼스 광고</h4>
+                        <img src="fastcampus-ad.png" alt="패스트캠퍼스 광고">
+                        <p>
+                        패스트캠퍼스의 프로그래밍 첫걸음 올인원 패키지 강좌로<br>
+                        여러분의 설레는 첫 코딩을 시작하세요!
+                        </p>
+                        <a href="https://www.fastcampus.co.kr/">패스트캠퍼스 사이트 바로가기</a>
+                    </div>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <ul>
+            <li><a href="#">회사소개</a></li>
+            <li><a href="#">인재채용</a></li>
+            <li><a href="#">이용약관</a></li>
+            <li><a href="#">개인정보 보호</a></li>
+            <li><a href="#">고객센터</a></li>
+        </ul>
+    </footer>
+</body>
+</html>
