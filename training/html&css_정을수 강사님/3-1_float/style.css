@@ -1,0 +1,36 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+div.mother {
+  width:270px;
+  padding:20px;
+  border:2px solid lime;
+
+  /* 
+  overflow: hidden;
+  -> 원래 overflow:hidden;은 넘치는 컨텐츠영역을 안보이도록 자르는 속성인데, 여기서 overflow속성을 사용하면 “블록이 자리잡는 상태”를 다시 한번 일어나도록 만들기 때문에 부모가 자식을 감싸안는 형태로 나타나는 것이다..
+  
+  */
+
+  /* 
+  display: inline-block; 
+  -> 하지만 inline-block은 margin:auto 값이 듣지 않기 때문에
+  가운데 정렬이 불가능하다.
+  */
+}
+.mother::after {
+  content: '';
+  display: block;
+  clear: left;
+}
+
+div.photo {
+  width:100px;
+  height:100px;
+  margin-right:20px;
+  border:10px solid lime;
+  float: left;
+}
+

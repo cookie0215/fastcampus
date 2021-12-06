@@ -1,0 +1,74 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+
+.grandmom {
+  width: 680px;
+  border: 1px solid black;
+  padding: 20px;
+
+  /* 하지만 이제 막내 bottom요소가 생기면서
+  clear: both;가 사용되었으니, 더이상 overflow: hidden;이 필요없어진다.  */
+  /* overflow: hidden; */
+}
+div.mother {
+  width:270px;
+  padding:20px;
+  border:2px solid lime;
+}
+.mother.left {
+  float: left;
+}
+.mother.right {
+  float: right;
+}
+/*
+-> 2개의 mother가 float으로 떠있는 상태이기 떄문에
+mother에 굳이 clear: both를 줄 필요가 없다.
+그리고 grandmom에 overflow: hidden;으로 자식을 감싸줄 수 있어서
+bfc재계산이 발생되게 하면 된다.
+
+.mother::after {
+  content: '';
+  display: block;
+  clear: left;
+}
+
+*/
+
+div.photo {
+  width:100px;
+  height:100px;
+  margin-right:20px;
+  border:10px solid lime;
+  float: left;
+}
+
+.bottom {
+  border: 2px solid red;
+
+  /*
+  왜 bottom요소의 inline글자가 저렇게 틀어져서 나올까?
+  => 왜냐하면 bottom안의 inline요소 글자는 float영역을 침범할 수
+  없기 때문이다.
+  
+  이러한 문제를 해결하려면 bottom요소에 clear: both;를 지정해줘야 한다!
+  */
+  clear: both;
+  padding: 10px;
+
+  /* 
+  이제 bottom요소와 mother요소를 margin을 이용해서 떨어뜨려보자
+  => 값을 엄청 크게 주지 않는 한 bottom에 margin을 사용해도
+  큰 변화가 없는 것을 볼 수 있다..
+  
+  ==> 왜냐하면 2개의 mother요소는 지금 float로 떠있는 상태이기 때문에
+  bottom이 아무리 margin-top을 줘도 mother간의 간격을 벌리는 것이 아니라
+  grandmom의 border-top에서부터의 간격을 넓히는 것이기 때문이다!!!
+  
+  => 그래서 bottom요소와 mother요소의 간격을 벌리고 싶다면
+  mother요소에 margin-bottom을 주는 것이 효과적이다!!
+  */
+}
